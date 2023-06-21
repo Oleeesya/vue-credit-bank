@@ -1,49 +1,51 @@
 <template>
-  <header>
-    <div class="header container">
+  <header class="header container">
+    <div class="header__wrapper-menu-open">
       <div
         :class="[this.menuIsOpen ? 'header__menu_open' : 'header__menu']"
         v-on:click="clickMenu"
       ></div>
-      <div class="header__logo">
-        <img alt="Bank logo" src="../assets/logo.svg" />
+      <div>
+        <img class="header__logo" alt="Bank logo" src="../assets/logo.svg" />
       </div>
     </div>
+    <div :class="[!this.menuIsOpen ? 'menu_hidden' : '', 'menu']">
+      <ul class="menu__list">
+        <li>
+          <a href="#" class="menu__list-item" target="_blank"
+            >Какие преимущества</a
+          >
+        </li>
+        <li>
+          <a href="#" class="menu__list-item" target="_blank"
+            >Что вы получаете</a
+          >
+        </li>
+        <li>
+          <a href="#" class="menu__list-item" target="_blank">Еще сюрпризы</a>
+        </li>
+        <li>
+          <button type="button" class="menu__list-item" v-on:click="openPopup">
+            Оформить карту
+          </button>
+        </li>
+      </ul>
+      <ul class="menu__contact">
+        <li class="menu__contact-item">
+          <span>По России</span>
+          <a href="”tel:+78009506570" class="menu__contact-number"
+            >8 800 950 6570</a
+          >
+        </li>
+        <li class="menu__contact-item">
+          <span>По Миру</span>
+          <a href="”tel:+78009506570" class="menu__contact-number"
+            >8 800 950 6570</a
+          >
+        </li>
+      </ul>
+    </div>
   </header>
-  <div :class="[!this.menuIsOpen ? 'menu_hidden' : '', 'menu']">
-    <ul class="menu__list">
-      <li>
-        <a href="#" class="menu__list-item" target="_blank"
-          >Какие преимущества</a
-        >
-      </li>
-      <li>
-        <a href="#" class="menu__list-item" target="_blank">Что вы получаете</a>
-      </li>
-      <li>
-        <a href="#" class="menu__list-item" target="_blank">Еще сюрпризы</a>
-      </li>
-      <li>
-        <button type="button" class="menu__list-item" v-on:click="openPopup">
-          Оформить карту
-        </button>
-      </li>
-    </ul>
-    <ul class="menu__contact">
-      <li class="menu__contact-item">
-        <span>По России</span>
-        <a href="”tel:+78009506570" class="menu__contact-number"
-          >8 800 950 6570</a
-        >
-      </li>
-      <li class="menu__contact-item">
-        <span>По Миру</span>
-        <a href="”tel:+78009506570" class="menu__contact-number"
-          >8 800 950 6570</a
-        >
-      </li>
-    </ul>
-  </div>
 </template>
 
 <script>
@@ -80,27 +82,33 @@ export default {
   align-items: center;
   padding-top: 86px;
 
-  .header__menu {
-    background-image: url("../assets/menu.svg");
-    background-repeat: no-repeat;
-    width: 25px;
-    height: 19px;
-    position: absolute;
-    left: -73px;
-  }
+  .header__wrapper-menu-open {
+    position: relative;
+    display: flex;
+    align-items: center;
 
-  .header__menu:hover,
-  .header__menu_open:hover {
-    cursor: $cursor-hover;
-  }
+    .header__menu {
+      background-image: url("../assets/menu.svg");
+      background-repeat: no-repeat;
+      width: 25px;
+      height: 19px;
+      position: absolute;
+      left: -73px;
+    }
 
-  .header__menu_open {
-    background-image: url("../assets/menu-open.svg");
-    background-repeat: no-repeat;
-    width: 65px;
-    height: 60px;
-    position: absolute;
-    left: -93px;
+    .header__menu:hover,
+    .header__menu_open:hover {
+      cursor: $cursor-hover;
+    }
+
+    .header__menu_open {
+      background-image: url("../assets/menu-open.svg");
+      background-repeat: no-repeat;
+      width: 65px;
+      height: 60px;
+      position: absolute;
+      left: -93px;
+    }
   }
 }
 
@@ -112,8 +120,8 @@ export default {
   top: 0;
   left: 0;
   padding: 93px 99px 100%;
-  height: 100%;
   transition: left 0.4s ease-out;
+  height: 100%;
 
   .menu__list {
     @extend %reset-default-styles;
@@ -164,5 +172,83 @@ export default {
 .menu_hidden {
   left: -100%;
   transition: left 0.5s ease-in 0.1s;
+}
+
+@media (max-width: 1900px) {
+  .menu {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+}
+
+@media (max-width: 1680px) {
+  .header {
+    padding-top: 50px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    .menu {
+      padding: 0;
+      position: initial;
+      background: none;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+
+      .menu__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .menu__contact {
+        margin-top: 10px;
+        flex-direction: row;
+        justify-content: flex-end;
+        column-gap: 30px;
+
+        .menu__contact-number {
+          font-size: 20px;
+        }
+      }
+    }
+    .header__menu {
+      display: none;
+    }
+    .header__menu_open {
+      display: none;
+    }
+    .header__logo {
+      width: 90%;
+    }
+  }
+}
+@media (max-width: 980px) {
+  .header__wrapper-menu-open {
+    max-width: 170px;
+  }
+  .menu .menu__list .menu__list-item {
+    font-size: 13px;
+    font-weight: $weight-medium;
+  }
+  .header .menu .menu__contact .menu__contact-number {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 680px) {
+  .header .header__logo {
+    width: 100%;
+  }
+  .header .menu .menu__list {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 </style>

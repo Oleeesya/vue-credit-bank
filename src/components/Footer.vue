@@ -8,7 +8,7 @@
         </div>
 
         <ul class="footer__list">
-          <div>
+          <div class="footer__list-wrapper">
             <li>
               <a href="#" class="footer__list-item" target="_blank">О банке</a>
             </li>
@@ -29,7 +29,7 @@
               >
             </li>
           </div>
-          <div>
+          <div class="footer__list-wrapper">
             <li>
               <a href="#" class="footer__list-item" target="_blank"
                 >Раскрытие информации</a
@@ -150,6 +150,79 @@ export default {
         }
       }
     }
+  }
+}
+@media (max-width: 1900px) {
+  .footer .container {
+    max-width: 1109px;
+    .footer__wrapper .contact {
+      margin-left: 50px;
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .footer .container {
+    max-width: 680px;
+
+    .footer__wrapper {
+      padding-top: 50px;
+      column-gap: 30px;
+
+      .footer__logo {
+        max-width: 150px;
+      }
+
+      .footer__list {
+        margin-left: 0;
+        column-gap: 0;
+      }
+
+      .contact {
+        margin-left: 0;
+
+        .contact__item .contact__item-number {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .footer {
+    margin-top: 0;
+
+    .container {
+      max-width: 480px;
+
+      .footer__wrapper {
+        display: flex;
+        flex-direction: column;
+        padding-top: 50px;
+        column-gap: 30px;
+
+        .footer__list {
+          column-gap: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          row-gap: 20px;
+          line-height: 1;
+          margin-top: 25px;
+          justify-content: space-between;
+        }
+        .contact,
+        .footer__logo .footer__logo-name {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer .container {
+    max-width: 320px;
   }
 }
 </style>

@@ -15,16 +15,12 @@ export default {
 </script>
 
 <style lang='scss'>
-html,
-body {
-  margin: 0;
-}
+@import "./assets/variables.scss";
+@import "./assets/extends.scss";
 
 #app {
+  @extend %reset-default-styles;
   font-family: Geometria, Arial, sans-serif;
-  margin: 0 auto;
-  box-sizing: border-box;
-  padding: 0;
   color: #fff;
   position: relative;
   background-color: #0e0e0e;
@@ -32,6 +28,25 @@ body {
 .container {
   max-width: 980px;
   margin: 0 auto;
-  position: relative;
+}
+
+@media (max-width: 980px) {
+  .container {
+    max-width: 680px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 320px;
+  }
 }
 </style>

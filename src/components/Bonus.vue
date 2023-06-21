@@ -221,5 +221,78 @@ export default {
     }
   }
 }
+@media (max-width: 980px) {
+  .bonus {
+    margin-top: 89px;
+
+    .container {
+      max-width: 680px;
+
+      .bonus__title {
+        margin-bottom: 30px;
+      }
+
+      .bonus__list {
+        column-gap: 30px;
+        row-gap: 15px;
+
+        .bonus__img_type_unlimited-internet,
+        .bonus__img_type_free-baggage-wrapping,
+        .bonus__img_type_free-app,
+        .bonus__img_type_taxi-discount,
+        .bonus__img_type_discount-restaurant,
+        .bonus__img_type_business-halls {
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 100%;
+        }
+
+        .bonus__description-title {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .bonus {
+    margin-top: 70px;
+
+    .container {
+      max-width: 480px;
+
+      .bonus__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+
+        .bonus__description-title {
+          font-size: 14px;
+        }
+
+        .bonus__description {
+          font-size: 12px;
+        }
+
+        .bonus__description_type_img {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .bonus .container {
+    max-width: 320px;
+    .bonus__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 30px;
+    }
+  }
+}
 </style>
  

@@ -124,4 +124,65 @@ export default {
     }
   }
 }
+
+@media (max-width: 1680px) {
+  .assistant .assistant__list {
+    background-position-x: -600px;
+  }
+}
+@media (max-width: 980px) {
+  .assistant {
+    margin-top: 89px;
+
+    .assistant__list {
+      background-position-x: -800px;
+    }
+  }
+}
+
+@media screen {
+  .assistant .assistant__list {
+    padding-left: 300px;
+  }
+}
+
+@media (max-width: 680px) {
+  .assistant .assistant__list {
+    background-position-x: -330px;
+    background-size: 200%;
+    padding: 0 0 0 165px;
+    margin-bottom: 89px;
+
+    .assistant__list-item {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+  }
+  .assistant .assistant__list .assistant__img_type_meeting,
+  .assistant .assistant__list .assistant__img_type_rout-plan,
+  .assistant .assistant__list .assistant__img_type_concert,
+  .assistant .assistant__list .assistant__img_type_table-reservation {
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+}
+
+@media (max-width: 480px) {
+  .assistant .assistant__list {
+    background: none;
+    padding: 0;
+    margin-bottom: 70px;
+    margin-top: 20px;
+
+    .assistant__list-item {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+  }
+
+  .assistant .assistant__title_description {
+    margin-bottom: 0;
+  }
+}
 </style>

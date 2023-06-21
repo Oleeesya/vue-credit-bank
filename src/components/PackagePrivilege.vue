@@ -153,4 +153,39 @@ export default {
     margin-right: 64px;
   }
 }
+@media (max-width: 980px) {
+  .package-privilege .package-privilege__title {
+    font-size: 34px;
+  }
+  .package-privilege
+    .package-privilege__list
+    li[data-v-779edbbb]:not(:first-child):not(:last-child) {
+    margin-right: 0;
+  }
+  .package-privilege .package-privilege__list li[data-v-779edbbb]:first-child {
+    margin-right: 0;
+  }
+  .package-privilege .package-privilege__list {
+    column-gap: 20px;
+    margin-top: 55px;
+  }
+  .package-privilege .package-privilege__title_description {
+    margin: 30px auto 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .package-privilege .package-privilege__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+
+    .package-privilege__description-title {
+      font-size: 14px;
+    }
+    .package-privilege__description {
+      font-size: 12px;
+    }
+  }
+}
 </style>

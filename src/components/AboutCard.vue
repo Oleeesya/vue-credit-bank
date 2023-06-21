@@ -147,4 +147,49 @@ export default {
     }
   }
 }
+
+@media (max-width: 1480px) {
+  .about-card {
+    background-size: 60%, auto;
+    background-position-y: 20%;
+  }
+}
+@media (max-width: 980px) {
+  .about-card {
+    padding-bottom: 89px;
+
+    .container .about-card__title {
+      font-size: 60px;
+    }
+    .container .about-card__list {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .about-card {
+    margin-top: 50px;
+    background-position-y: 35%;
+
+    .container .about-card__title {
+      font-size: 40px;
+
+      .about-card__title_description {
+        font-size: 20px;
+      }
+    }
+
+    .container .btn {
+      width: 250px;
+      height: 80px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .about-card {
+    background-position-y: 45%;
+  }
+}
 </style>

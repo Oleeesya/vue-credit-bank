@@ -603,4 +603,18 @@ export default {
 .popup_background {
   background: #000000;
 }
+
+@media (max-width: 680px) {
+  .popup .popup__container {
+    width: 480px;
+  }
+}
+@media (max-width: 480px) {
+  .popup .popup__container {
+    width: 320px;
+  }
+  .popup .popup__container .popup__form .popup__form-title {
+    font-size: 25px;
+  }
+}
 </style>
