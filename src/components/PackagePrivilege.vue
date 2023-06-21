@@ -101,6 +101,7 @@ export default {
       background-image: url("../assets/ticket.svg");
       width: 56.34px;
       height: 54.36px;
+      background-repeat: no-repeat;
     }
 
     .package-privilege__img_type_avia {
@@ -109,6 +110,7 @@ export default {
       background-image: url("../assets/avia.svg");
       width: 58.38px;
       height: 57.93px;
+      background-repeat: no-repeat;
     }
 
     .package-privilege__img_type_insurance {
@@ -117,6 +119,7 @@ export default {
       background-image: url("../assets/insurance.svg");
       width: 58.21px;
       height: 52.13px;
+      background-repeat: no-repeat;
     }
 
     .package-privilege__img_type_account-money {
@@ -125,6 +128,7 @@ export default {
       background-image: url("../assets/account-money.svg");
       width: 57.97px;
       height: 55.98px;
+      background-repeat: no-repeat;
     }
 
     .package-privilege__description-title {
@@ -151,6 +155,11 @@ export default {
   }
   .package-privilege__list li:not(:first-child):not(:last-child) {
     margin-right: 64px;
+  }
+}
+@media (max-width: 1900px) {
+  .package-privilege .package-privilege__list {
+    padding: 0 1px;
   }
 }
 @media (max-width: 980px) {
