@@ -159,20 +159,25 @@ export default {
 }
 @media (max-width: 1900px) {
   .package-privilege .package-privilege__list {
-    padding: 0 1px;
+    column-gap: 7px;
+
+    li:first-child {
+      margin-right: 0;
+    }
+    li:not(:first-child):not(:last-child) {
+      margin-right: 0;
+    }
   }
 }
 @media (max-width: 980px) {
+  .package-privilege .package-privilege__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+  }
+
   .package-privilege .package-privilege__title {
     font-size: 34px;
-  }
-  .package-privilege
-    .package-privilege__list
-    li[data-v-779edbbb]:not(:first-child):not(:last-child) {
-    margin-right: 0;
-  }
-  .package-privilege .package-privilege__list li[data-v-779edbbb]:first-child {
-    margin-right: 0;
   }
   .package-privilege .package-privilege__list {
     column-gap: 20px;
