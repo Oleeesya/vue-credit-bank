@@ -116,19 +116,17 @@
                 <input
                   v-if="item.name == this.country.name"
                   class="popup__input_select-opt"
-                  :name="
-                    this.country ? this.country.name : 'Российская федерация'
-                  "
+                  :name="this.country.name"
                   type="radio"
-                  :id="this.country ? this.country.id : option1"
+                  :id="this.country.id"
                   checked
                 />
                 <label
                   v-if="item.name == this.country.name"
-                  :for="[this.country ? this.country.id : option1]"
-                  class="popup__label_select"
+                  :for="[this.country.id]"
+                  class="popup__label_select-item"
                 >
-                  {{ this.country.name || "Российская федерация" }}
+                  {{ this.country.name }}
                 </label>
                 <input
                   v-if="item.name !== this.country.name"
@@ -141,7 +139,7 @@
                 <label
                   v-if="item.name !== this.country.name"
                   :for="item.id"
-                  class="popup__label_select"
+                  class="popup__label_select-item"
                 >
                   {{ item.name }}
                 </label>
@@ -459,7 +457,7 @@ export default {
         width: 100%;
         max-width: 680px;
 
-        .popup__label_select {
+        .popup__label_select-item {
           padding: 40px 29px 21px 30px;
           display: flex;
           align-items: center;
@@ -480,7 +478,7 @@ export default {
           white-space: nowrap;
         }
 
-        .popup__label_select:checked {
+        .popup__label_select-item:checked {
           border-radius: 10px;
         }
 
@@ -510,11 +508,23 @@ export default {
           top: 36px;
         }
       }
-      .popup__label_type_select:focus .popup__label_select {
+
+      .popup__label_type_select:hover {
+        cursor: pointer;
+      }
+
+      .popup__label_type_select:focus .popup__label_select-item {
         position: relative;
         top: 0;
         pointer-events: all;
         background: #333333;
+        cursor: pointer;
+      }
+
+      .popup__label_type_select:focus
+        .popup__input_select-opt:checked
+        + label:after {
+        transform: rotate(0deg);
       }
     }
 
